@@ -22,7 +22,7 @@ body {
   text-align: center;
   background-color: cyan;
   margin: 0;
-  padding: 1em;
+  padding: 0.6em;
 }
 
 .container {
@@ -37,7 +37,6 @@ body {
   height: 1.1em;
   font-size: 110px;
   text-align: right;
-  margin-top: 7px;
 }
 
 #window {
@@ -48,7 +47,7 @@ body {
 .bottons {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  gap: 12px;
+  gap: 6px;
   /* Colores */
 }
 
@@ -64,7 +63,11 @@ body {
   background-color: #37354b;
 }
 
-/* zero edition */
-#zero {
+/* two spaces grid */
+.two-grid {
   grid-column-end: span 2;
 }
+
+.full-grid {
+    grid-column-end: span 4;
+  }

@@ -8,44 +8,58 @@
 
 <body>
     <div class="body-space">
-    <div id="title">
+    <!-- <div id="title">
         <h1>Local Calculator</h1>
-    </div>
+    </div> -->
     <div class="container">
         <div class="space-calc">
             <!-- Pantalla de vista de calculos -->
-            <label id="window">00</label>
+            <label id="window">0</label>
         </div>
-        <div class="bottons">
+        <div id="bottons-list"class="bottons">
             <!-- Cada boton del calculador -->
+            <!-- rows clean -->
+            <input class="two-grid" type="button" value="C" onclick="">
+            <input class="two-grid" type="button" value="CE">
             <!-- first row -->
-            <input type="button" value="n!" onclick="">
+            <input type="button" value="n!" >
             <input type="button" value="&percnt;">
-            <input type="button" value="&Sqrt;n" onclick="">
+            <input type="button" value="&Sqrt;n" >
             <input type="button" value="n&sup2;">
             <!-- second -->
             <input type="button" value="&divide;">
-            <input type="button" value="9">
-            <input type="button" value="8">
             <input type="button" value="7">
+            <input type="button" value="8">
+            <input type="button" value="9">
             <!-- third -->
-            <input type="button" value="x" onclick="">
-            <input type="button" value="6">
-            <input type="button" value="5">
+            <input type="button" value="x" >
             <input type="button" value="4">
+            <input type="button" value="5">
+            <input type="button" value="6">
             <!-- forth -->
-            <input type="button" value="-" onclick="">
-            <input type="button" value="3">
-            <input type="button" value="2" onclick="">
+            <input type="button" value="-" >
             <input type="button" value="1">
+            <input type="button" value="2" >
+            <input type="button" value="3">
             <!-- fifth -->
             <input type="button" value="+">
             <input type="button" value=".">
             <!-- 0 -->
-            <input id="zero" type="button" value="0">
+            <input class="two-grid" type="button" value="0">
+            <!-- get value = -->
+            <input class="full-grid" type="button" value="=">
         </div>
     </div>
     </div>
+
+    <!-- script listener from keyboard -->
+    <script  src="logitJS/saveStorage.js"></script>
+    <script src="logitJS/maths.js"></script>
+    <script src="logitJS/events.js"></script>
+    <script src="logitJS/inputs.js"></script>
+    <script>
+        // console.log(''.charAt())
+    </script>
 </body>
 
 </html>
