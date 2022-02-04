@@ -7,7 +7,7 @@
 #### Functional Web Calculator.
 #### ** Note!: ** You can use the Keyboard to set the values (0-9), evalute (Enter) and / or clean a single value (Escape).
 
-1. ### Default operations : 
+1. ### Default operations : da
     
     - #### Sum
     - #### Sustraction
@@ -21,6 +21,8 @@
  - #### Square root of a number.
  - #### Elevate a number twice.
  - #### Module of a number.
+
+3. ### History of the maded operations.
  
 **Descripcion en español**
 
@@ -41,3 +43,5 @@
    - #### Raíz cuadrada de un número.
    - #### Elevar un número dos veces.
    - #### Módulo de un número.
+
+3. ### Historial de las operaciones realizadas.
