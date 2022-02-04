@@ -26,22 +26,34 @@ function setValue(val) {
 }
 /** Event : escucha al teclado para asignar valores numericos, asignandolo a la ventana. */
 function setAction(key = "") {
-  let digit = key;
-  //   console.log(digit);
+
+  //Set the result
+  if (key === "Enter") {
+    getBotton("=").click();
+    return;
+  }
+
+  //To clean a single number
+  if (key === "Backspace") {
+    clear();
+    return;
+  }
+
+  //Clean it all
+  if (key === "Escape") {
+    clearAll();
+    return;
+  }
 
   //if is a number
-  if (!isNaN(digit)) {
-    let num = Number.parseInt(digit, 10);
+  if (!isNaN(key)) {
+    let num = Number.parseInt(key, 10);
     setValue(num);
   }
   //if it a point
-  if (digit === ".") {
+  if (key === ".") {
     if (!valnum.textContent.includes(digit)) {
       setValue(digit);
     }
-  }
-
-  if (digit === "Backspace") {
-    clear();
   }
 }

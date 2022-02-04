@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  min-height: 520px;
+  max-height: 520px;
   height: auto;
   padding: 10px;
 }
@@ -11,7 +11,6 @@ body {
 /* Body size */
 .body-space {
   display: grid;
-  grid-template-rows: auto;
   grid-template-columns: auto 20%;
 }
 
@@ -60,7 +59,7 @@ body {
 }
 /* hover to bottons */
 .bottons input:hover {
-  background-color: #37354b;
+  filter: brightness(130%);
 }
 
 /* two spaces grid */
@@ -77,7 +76,6 @@ body {
   text-align: center;
   margin-left: .4em;
   color: #fff;
-  overflow-y: scroll;
 }
 
 #space-history header *{
@@ -87,6 +85,11 @@ body {
 
 #space-history header img{
   margin-left: 0.78%;
+}
+
+#cont-hs{
+  overflow-y: auto;
+  max-height: 600px;
 }
 
 #space-history .ls{
