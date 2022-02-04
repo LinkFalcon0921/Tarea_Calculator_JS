@@ -6,6 +6,7 @@ addBottonsNumbers();
 
 //Functions after this lines
 
+/** Set the numeric bottons */
 function addBottonsNumbers() {
   //Filter the input
   let elems = allElems.filter((ch) => isNaN(ch));
@@ -14,6 +15,9 @@ function addBottonsNumbers() {
     //when you click a number, get the value and add it.
     //Cuando clickees un numero, obtendras el valor asignado.
     elem.onclick = function () {
+      //Remove the focus of the botton
+      elem.blur();
+
       setAction(elem.value);
     };
   });
@@ -38,6 +42,9 @@ function addBottonsxtra() {
 
   elems.forEach(function (elem) {
     elem.onclick = function () {
+      //Remove the focus of the botton
+      elem.blur();
+
       //asign the value.
       calcs.signs = elem.value;
       calcs.set(valnum.textContent);
@@ -51,6 +58,10 @@ function equalBotton() {
   //= botton
   let iqual = getBotton("=");
   iqual.onclick = function () {
+    //Put the focus in this element
+    this.focus();
+
+    //assign the value
     calcs.set(valnum.textContent);
     valnum.textContent = calcs.evaluate();
     calcs.reset();
@@ -75,29 +86,35 @@ function specialBottons() {
   //Factorial
   let cleanA = getBotton("n!");
   cleanA.onclick = function () {
+    //Remove the focus of the botton
+    elem.blur();
+
     let info = `${valnum.textContent}!`;
     valnum.textContent = calcs.mathx.factorial(valnum.textContent);
-    
+
     info += ` = ${valnum.textContent}.`;
     saveStorage(info);
-
   };
   //SQRT
   cleanA = getBotton("√n");
   cleanA.onclick = function () {
-    
+    //Remove the focus of the botton
+    elem.blur();
+
     let info = `${this.value.charAt(0)}${valnum.textContent}`;
     valnum.textContent = calcs.mathx.getSqrt(valnum.textContent);
 
     info += ` = ${valnum.textContent}.`;
     saveStorage(info);
-    
   };
 
   //POW 2
   cleanA = getBotton("n²");
   cleanA.onclick = function () {
-    let info = `${valnum.textContent}${this.value.charAt(1)}`; 
+    //Remove the focus of the botton
+    elem.blur();
+
+    let info = `${valnum.textContent}${this.value.charAt(1)}`;
     valnum.textContent = calcs.mathx.up2(valnum.textContent);
 
     info += ` = ${valnum.textContent}.`;
