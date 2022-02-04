@@ -4,13 +4,13 @@ document.addEventListener("keydown", (event) => {
   setAction(event.key);
 });
 
-//limpia la numeracion actual en pantalla
+/**Clean the actual number in the window. */
 function clear() {
   let val = valnum.textContent.substring(0, valnum.textContent.length - 1);
   valnum.textContent = val.length > 0 ? val : "0";
 }
 
-//clean the window.
+/** Clean the window. */
 function clearAll() {
   valnum.textContent = "0";
 }

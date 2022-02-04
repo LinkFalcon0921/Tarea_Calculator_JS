@@ -45,8 +45,12 @@ class Calculate {
         this.second < 0 ? "(" + this.second + ")" : this.second
       } `;
       this.first = apply(this);
+    } else {
+      if (this.signs === "÷") {
+        alert("No se puede dividir entre cero.");
+        return;
+      }
     }
-    console.log(this.first);
     saveStorage(this.operation + `=  ${this.first}.`);
     return this.first;
   }
@@ -83,27 +87,27 @@ function apply(vals) {
   let total = 0;
   switch (vals.signs) {
     case "+":
-      if (this.second != 0) {
+      if (vals.second != 0) {
         total = vals.first + vals.second;
       }
       break;
     case "-":
-      if (this.second != 0) {
+      if (vals.second != 0) {
         return vals.first - vals.second;
       }
       break;
     case "x":
-      if (this.second != 0) {
+      if (vals.second != 0) {
         total = vals.first * vals.second;
       }
       break;
     case "÷":
-      if (this.second == 0) {
+      if (vals.second != 0) {
         total = vals.first / vals.second;
       }
       break;
     case "%":
-      if (this.second != 0) {
+      if (vals.second != 0) {
         total = vals.first % vals.second;
       }
       break;
@@ -120,9 +124,9 @@ function getCalculate() {
 }
 /** Return a checked number with not more than 11 digits.
  * @param digit the digit to check.
-  */
+ */
 function checkin(val = 0) {
-  if ((val+"").length > 9) {
+  if ((val + "").length > 9) {
     val = val.toFixed(9);
   }
   return val;
@@ -132,18 +136,18 @@ function checkin(val = 0) {
 class mates {
   //SQRL : RAIZ CUADRADA
   static getSqrt(val = 0) {
-    return checkin( Math.sqrt(val) );
+    return checkin(Math.sqrt(val));
   }
 
   //Factorial
   static factorial(num = 0) {
     if (num < 0) return -1;
     else if (num == 0) return 1;
-    else return num * factorialize(num - 1);
+    else return num * this.factorial(num - 1);
   }
 
   //up 2 number
   static up2(val = 0) {
-    return checkin( Math.pow(val, 2) );
+    return checkin(Math.pow(val, 2));
   }
 }

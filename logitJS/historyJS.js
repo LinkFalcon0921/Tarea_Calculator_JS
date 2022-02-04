@@ -1,37 +1,36 @@
+//Global variables
+const nod = document.getElementById('cont-hs');
 /** Create a item to the history
  * @param key andding a {h-} for id
  * @param value value to show in the element
  */
 function setHistory(key, value) {
-  const nod = document.createElement("div");
-  const valElem = document.createElement("strong");
+  const valElem = document.createElement("h3");
 
   //set values to elements
-  nod.id = `h-${key}`;
+  valElem.id = `h-${key}`;
   valElem.innerHTML = value;
+  valElem.classList ='ls';
 
   nod.appendChild(valElem);
-
-  document.getElementById("history").appendChild(nod);
 }
 
 /** Clean the historial and clear the local storage. */
 function clearHistorial() {
   if (localStorage.length > 0) {
-    let elems = getStorage();
+    const elems = getStorage();
 
-    elems.forEach(function (el) {
-      let item = document.getElementById(`h-${el}`);
+    elems.forEach(function (key) {
+      let item = document.getElementById(`h-${key}`);
       item.remove();
     });
 
     localStorage.clear();
   }
 }
-
-
-if(localStorage.length > 0 ){
-    let values = getStorage();
+//Action for set the history
+if(localStorage.length > 0){
+    const values = getStorage();
 
     values.forEach(function(x){
         const y = localStorage.getItem(x);

@@ -78,7 +78,7 @@ function specialBottons() {
     let info = `${valnum.textContent}!`;
     valnum.textContent = calcs.mathx.factorial(valnum.textContent);
     
-    info += ` = ${valnum.textContent}`;
+    info += ` = ${valnum.textContent}.`;
     saveStorage(info);
 
   };
@@ -89,7 +89,7 @@ function specialBottons() {
     let info = `${this.value.charAt(0)}${valnum.textContent}`;
     valnum.textContent = calcs.mathx.getSqrt(valnum.textContent);
 
-    info += ` = ${valnum.textContent}`;
+    info += ` = ${valnum.textContent}.`;
     saveStorage(info);
     
   };
@@ -100,7 +100,7 @@ function specialBottons() {
     let info = `${valnum.textContent}${this.value.charAt(1)}`; 
     valnum.textContent = calcs.mathx.up2(valnum.textContent);
 
-    info += ` = ${valnum.textContent}`;
+    info += ` = ${valnum.textContent}.`;
     saveStorage(info);
   };
 }

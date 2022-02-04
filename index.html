@@ -22,8 +22,8 @@
             <input class="two-grid" type="button" value="C" onclick="">
             <input class="two-grid" type="button" value="CE">
             <!-- first row -->
-            <input type="button" value="n!" >
             <input type="button" value="&percnt;">
+            <input type="button" value="n!" >
             <input type="button" value="&Sqrt;n" >
             <input type="button" value="n&sup2;">
             <!-- second -->
@@ -50,6 +50,16 @@
             <input class="full-grid" type="button" value="=">
         </div>
     </div>
+    <!-- Historial here -->
+    <div class="container" id="space-history" >
+        <header>
+            <h2>Historial</h2>
+            <img src="images/delete_iconn.ico" onclick="clearHistorial()" alt="Delete">
+        </header>
+        
+        <!-- Elements here -->
+        <div id="cont-hs"></div>
+    </div>
     </div>
 
     <!-- script listener from keyboard -->
@@ -57,9 +67,7 @@
     <script src="logitJS/maths.js"></script>
     <script src="logitJS/events.js"></script>
     <script src="logitJS/inputs.js"></script>
-    <script>
-        // console.log(''.charAt())
-    </script>
+    <script src="/logitJS/historyJS.js"></script>
 </body>
 
 </html>

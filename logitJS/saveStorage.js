@@ -1,14 +1,15 @@
 function saveStorage(operation = "") {
     //key
-  let l = localStorage.length + 1;
+  let l = localStorage.length;
   localStorage.setItem(l, operation);
+  setHistory(l,operation);
 }
 
 function getStorage() {
   let values = [];
 
-  for (let i = 1; i < localStorage.length; i++) {
-    values.push(localStorage.getItem(i));
+  for (let i = 0; i < localStorage.length; i++) {
+    values.push(i);
   }
   return values;
 }
