@@ -24,6 +24,7 @@ function setValue(val) {
       valnum.textContent === "0" ? "" + val : valnum.textContent + val;
   }
 }
+//wait the key form the keybo
 /** Event : escucha al teclado para asignar valores numericos, asignandolo a la ventana. */
 function setAction(key = "") {
 
@@ -52,8 +53,8 @@ function setAction(key = "") {
   }
   //if it a point
   if (key === ".") {
-    if (!valnum.textContent.includes(digit)) {
-      setValue(digit);
+    if (!valnum.textContent.includes(key)) {
+      setValue(key);
     }
   }
 }

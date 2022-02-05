@@ -8,7 +8,7 @@ addBottonsNumbers();
 
 /** Set the numeric bottons */
 function addBottonsNumbers() {
-  //Filter the input
+  //Filter each input
   let elems = allElems.filter((ch) => isNaN(ch));
 
   elems.forEach(function (elem) {
@@ -16,9 +16,9 @@ function addBottonsNumbers() {
     //Cuando clickees un numero, obtendras el valor asignado.
     elem.onclick = function () {
       //Remove the focus of the botton
-      elem.blur();
+      this.blur();
 
-      setAction(elem.value);
+      setAction(this.value);
     };
   });
 
@@ -43,10 +43,10 @@ function addBottonsxtra() {
   elems.forEach(function (elem) {
     elem.onclick = function () {
       //Remove the focus of the botton
-      elem.blur();
+      this.blur();
 
       //asign the value.
-      calcs.signs = elem.value;
+      calcs.signs = this.value;
       calcs.set(valnum.textContent);
       //Get the new sign.
       clearAll();
@@ -87,38 +87,29 @@ function specialBottons() {
   let cleanA = getBotton("n!");
   cleanA.onclick = function () {
     //Remove the focus of the botton
-    elem.blur();
+    this.blur();
 
-    let info = `${valnum.textContent}!`;
-    valnum.textContent = calcs.mathx.factorial(valnum.textContent);
-
-    info += ` = ${valnum.textContent}.`;
-    saveStorage(info);
+    let val = calcs.mathx.factorial(valnum.textContent);
+    textSpecial(1,this,val);
   };
   //SQRT
   cleanA = getBotton("√n");
   cleanA.onclick = function () {
     //Remove the focus of the botton
-    elem.blur();
+    this.blur();
 
-    let info = `${this.value.charAt(0)}${valnum.textContent}`;
-    valnum.textContent = calcs.mathx.getSqrt(valnum.textContent);
-
-    info += ` = ${valnum.textContent}.`;
-    saveStorage(info);
+    let val = calcs.mathx.getSqrt(valnum.textContent);
+    textSpecial(0,this,val);
   };
 
   //POW 2
   cleanA = getBotton("n²");
   cleanA.onclick = function () {
     //Remove the focus of the botton
-    elem.blur();
+    this.blur();
 
-    let info = `${valnum.textContent}${this.value.charAt(1)}`;
-    valnum.textContent = calcs.mathx.up2(valnum.textContent);
-
-    info += ` = ${valnum.textContent}.`;
-    saveStorage(info);
+    let val = calcs.mathx.up2(valnum.textContent);
+    textSpecial(1,this,val);
   };
 }
 
@@ -127,4 +118,17 @@ function specialBottons() {
  */
 function getBotton(val = "") {
   return allElems.find((ch) => ch.value === val);
+}
+
+/** Assign the result to the window amd also save it in the historial.
+ * @param loc location of the special digit.
+ * @param oper Dom element.
+ * @param total new value for the window.
+ */
+function textSpecial(loc=0, oper, total){
+  let info = `${(loc == 1)?valnum.textContent:oper.value.charAt(loc)}${(loc == 0)?valnum.textContent:oper.value.charAt(loc)}`;
+    valnum.textContent = total;
+    
+    info += ` = ${total}.`;
+    saveStorage(info);
 }

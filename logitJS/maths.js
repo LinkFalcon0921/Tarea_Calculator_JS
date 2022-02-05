@@ -73,6 +73,7 @@ class Calculate {
       this.second = digit;
       //make the fibbonacci assingment taking the sign.
     } else {
+      this.first = apply(this);
       this.second = digit;
     }
   }

@@ -1,8 +1,8 @@
 function saveStorage(operation = "") {
     //key
-  let l = localStorage.length;
-  localStorage.setItem(l, operation);
-  setHistory(l,operation);
+  let key = localStorage.length;
+  localStorage.setItem(key, operation);
+  setHistory(key,operation);
 }
 
 function getStorage() {

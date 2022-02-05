@@ -21,7 +21,7 @@ function clearHistorial() {
     const elems = getStorage();
 
     elems.forEach(function (key) {
-      let item = document.getElementById(`h-${key}`);
+      const item = document.getElementById(`h-${key}`);
       item.remove();
     });
 
