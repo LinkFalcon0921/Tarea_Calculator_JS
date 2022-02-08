@@ -93,7 +93,7 @@ function specialBottons() {
     textSpecial(1,this,val);
   };
   //SQRT
-  cleanA = getBotton("√n");
+  cleanA = getBotton("&radic;n");
   cleanA.onclick = function () {
     //Remove the focus of the botton
     this.blur();
@@ -103,7 +103,7 @@ function specialBottons() {
   };
 
   //POW 2
-  cleanA = getBotton("n²");
+  cleanA = getBotton("n&sup2;");
   cleanA.onclick = function () {
     //Remove the focus of the botton
     this.blur();
@@ -117,7 +117,9 @@ function specialBottons() {
  * @param value value to search in the dom.
  */
 function getBotton(val = "") {
-  return allElems.find((ch) => ch.value === val);
+  let obj = document.createElement('span');
+  obj.innerHTML = val;
+  return allElems.find((ch) => ch.value === obj.innerHTML);
 }
 
 /** Assign the result to the window amd also save it in the historial.
